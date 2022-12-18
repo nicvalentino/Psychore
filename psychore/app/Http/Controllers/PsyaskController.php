@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\jawaban_psikiater;
 use App\Models\pertanyaan;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,6 @@ class PsyaskController extends Controller
     {
         return view('psyask', [
             'pertanyaan' => pertanyaan::all(),
-            'jawaban' => pertanyaan::all()->jawaban_psikiaters,
         ]);
     }
 

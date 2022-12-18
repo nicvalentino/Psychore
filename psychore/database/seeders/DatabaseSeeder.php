@@ -232,6 +232,13 @@ class DatabaseSeeder extends Seeder
 
         ]);
 
+        jawaban_psikiater::create([
+            'pertanyaan_id' => 1,
+            'psikiater_id' => mt_rand(1,4),
+            'body' => 'NYOBA DOANGGG.'
+
+        ]);
+
         pertanyaan::create([
             'user_id' => mt_rand(1,15),
             'body' => 'Penyebab gangguan jiwa dan apakah bisa menurun secara genetik?',

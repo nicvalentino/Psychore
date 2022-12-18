@@ -10,11 +10,6 @@ body {
 
 /* Button style */
 .btn {
-  width: 120px;
-  height: 40px;
-  left: 1000px;
-  top: 30px;
-  
   background: #332C2B;
   backdrop-filter: blur(14.3715px);
   
@@ -24,6 +19,19 @@ body {
 .btn:hover, .btn:active, .btn:focus {
   outline: 0;
   box-shadow: none !important;
+  text-decoration: none;
+}
+
+.btn-sm {
+  font-size: 15px;
+  padding: 10px 25px;
+}
+
+.btn-md {
+  font-size: 15px;
+  font-weight: 400;
+  width: 130px;
+  height: 40px;
 }
 
 .btn-lg {
@@ -33,23 +41,6 @@ body {
   width: 240px;
   height: 60px;
   top: 34px;
-}
-
-.btn-lg-2 {
-  font-size: 16px;
-  padding: 10px 25px;
-
-  width: 318px;
-  height: 45px;
-  top: 34px;
-
-  border-radius: 10px;
-  margin-left: 17px;
-}
-
-.btn-sm {
-  font-size: 15px;
-  padding: 10px 25px;
 }
 
 /* Hover Button */
@@ -166,3 +157,119 @@ h6{
 .signin_content{
   padding: 4rem 5.4rem 4rem 4rem;
 }
+
+.dropdown-menu{
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-radius: 1rem;
+  transition: 0.5s;
+}
+.dropdown-menu .dropdown-item > li > a:hover {  
+  background-image: none;  
+  background-color: transparent!important;}
+
+.dropdown{
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.dropdown-item{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #130422;
+  margin: 5px;
+  background: transparent;
+}
+
+.dropdown-item p{
+  margin-top: 15px;
+  width: 100%;
+  background-color: transparent;
+}
+
+.dropdown-item span{
+  font-size: 22px;
+  transition: transform 0.5s;
+}
+
+.dropdown-item:hover p{
+  font-weight: 500;
+  text-decoration: none;
+  background: transparent;
+}
+
+.dropdown .list-group-item {
+  padding: 0;
+  margin: 0;
+}
+
+/*
+.sub-menu-wrap{
+  position:absolute;
+  top: 100%;
+  right: 10%;
+  width: 240px;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.5s;
+}
+
+.sub-menu-wrap.open-menu{
+  max-height: 75px;
+}
+
+.sub-menu{
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+.user-info{
+  display: flex;
+  align-items: center;
+}
+
+.user-info h3{
+  font-weight: 400;
+}
+
+.user-info img{
+  width: 60px;
+  margin-right: 15px;
+}
+
+.sub-menu-link{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #130422;
+  margin: 12px 0;
+}
+
+.sub-menu-link p{
+  width: 100%;
+}
+
+.sub-menu-link img{
+  width: 16%;
+  padding: 8px;
+  margin-right: 15px;
+}
+
+.sub-menu-link span{
+  font-size: 22px;
+  transition: transform 0.5s;
+}
+
+.sub-menu-link:hover span{
+  transform: translateX(5px);
+}
+
+.sub-menu-link:hover p{
+  font-weight: 500;
+}
+*/
