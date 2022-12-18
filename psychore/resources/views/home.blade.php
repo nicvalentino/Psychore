@@ -15,8 +15,17 @@
     <title>PsyChore</title>
 
 </head>
+
+    @extends('navbar')
 <body>
 
+
+    @if(session()->has('loginError'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ session('loginError') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
     <div style="background-image: url(../images/bgTopNav.png); background-size:cover; height: 480px;">
     <!-- NAVBAR -->    
         <nav class="navbar navbar-expand-lg bg-transparent navbar-dark">
@@ -45,7 +54,7 @@
                         </li>
                     </ul>
                 </div>
-                <button type="button" class="btn btn-sm btn-primary d-none d-sm-block" data-bs-toggle="modal" data-bs-target="#masukModal">Masuk</button>
+                
             </div>
         </nav>
     <!-- NAVBAR -->    

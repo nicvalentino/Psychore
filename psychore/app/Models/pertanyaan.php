@@ -18,7 +18,7 @@ class pertanyaan extends Model
 
     public function jawaban_psikiaters()
     {
-        return $this->hasMany(psikiater::class);
+        return $this->hasMany(jawaban_psikiater::class);
     }
 
 }
