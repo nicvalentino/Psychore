@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\user;
+use App\Models\pertanyaan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Validation\Validator;
 
-class RegisterController extends Controller
+class AddaskController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,12 +15,15 @@ class RegisterController extends Controller
      */
     public function index()
     {
-        if(Auth::check())
-        {
-            return redirect()->intended('/home');
-        }else {
-            return view('regist');
+        if (Auth::check()){
+            return view('askpage',[
+                'isLoggedIn' => Auth::check(),
+                'user' => Auth::user(),
+            ]);
+        } else {
+            return view('masuk');
         }
+        
     }
 
     /**
@@ -42,28 +44,16 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'name' =>'required',
-            'email' => 'required|email:dns|unique:users',
-            'password' => 'required|min:6|max:255'
-        ]);
-
-        $validatedData['password'] = bcrypt($validatedData['password']);
-
-        user::create($validatedData);
-
-        // $request->session()->flash('success', 'Registrasi berhasil !');
-
-        return redirect()->to('/login');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\user  $user
+     * @param  \App\Models\pertanyaan  $pertanyaan
      * @return \Illuminate\Http\Response
      */
-    public function show(user $user)
+    public function show(pertanyaan $pertanyaan)
     {
         //
     }
@@ -71,10 +61,10 @@ class RegisterController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\user  $user
+     * @param  \App\Models\pertanyaan  $pertanyaan
      * @return \Illuminate\Http\Response
      */
-    public function edit(user $user)
+    public function edit(pertanyaan $pertanyaan)
     {
         //
     }
@@ -83,10 +73,10 @@ class RegisterController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\user  $user
+     * @param  \App\Models\pertanyaan  $pertanyaan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, user $user)
+    public function update(Request $request, pertanyaan $pertanyaan)
     {
         //
     }
@@ -94,10 +84,10 @@ class RegisterController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\user  $user
+     * @param  \App\Models\pertanyaan  $pertanyaan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(user $user)
+    public function destroy(pertanyaan $pertanyaan)
     {
         //
     }

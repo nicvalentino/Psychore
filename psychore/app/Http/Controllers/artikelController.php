@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\user;
 use App\Models\artikel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class artikelController extends Controller
 {
@@ -14,18 +16,23 @@ class artikelController extends Controller
      */
     public function index()
     {
-        return view( 'testartikellist', [
+        return view( 'artikel-list', [
+            'isLoggedIn' => Auth::check(),
+            'user' => Auth::user(),
             "title" => "Artikel",
-            "artikel" => artikel::latest()->Filter(request(['search']))->paginate(2)->withQueryString()
+            "artikel" => artikel::latest()->Filter(request(['search']))->paginate(10)->withQueryString()
         ]);
     }
 
     public function show(artikel $artikel)
     {
-        return view( 'testartikel', [
+        return view( 'artikel', [
+            'isLoggedIn' => Auth::check(),
+            'user' => Auth::user(),
             "title" => $artikel->title,
             "penulis" => $artikel->psikiater->name,
-            "artikel" => $artikel
+            "artikel" => $artikel,
+            "artikels" => artikel::latest()->Filter(request(['search']))->paginate(5)->withQueryString(),
         ]);
     }
 

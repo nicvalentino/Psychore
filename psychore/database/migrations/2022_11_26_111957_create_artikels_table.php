@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('psikiater_id');
             $table->string('title');
             $table->string('slug')->unique();
+            $table->string('imgsource')->nullable();
             $table->text('excerpt')->nullable();
             $table->text('body');
             $table->integer('like_count')->default(0);

@@ -43,6 +43,8 @@ class LoginController extends Controller
         return back()->with('loginError' , 'Login Failed');
     }
 
+
+
     /**
      * Show the form for creating a new resource.
      *

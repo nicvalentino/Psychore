@@ -43,10 +43,10 @@
                         <div class="col-md-1 col-lg-1 col-xl-2 mx-auto mt-2">
                             <h4 class="mb-4 font-weight-bold">Explore</h4>
                             <p>
-                                <a href="#artikel" class="text-white">Artikel</a>
+                                <a href="/artikel" class="text-white">Artikel</a>
                             </p>
                             <p>
-                                <a href="#PsyAsk" class="text-white">PsyAsk</a>
+                                <a href="/psyask" class="text-white">PsyAsk</a>
                             </p>
                         </div>
                         <!-- Explore Column -->

@@ -3,13 +3,14 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
-
-use App\Models\psikiater;
 use App\Models\user;
+
 use App\Models\artikel;
-use App\Models\jawaban_psikiater;
+use App\Models\comment;
+use App\Models\psikiater;
 use App\Models\pertanyaan;
+use Illuminate\Database\Seeder;
+use App\Models\jawaban_psikiater;
 
 class DatabaseSeeder extends Seeder
 {
@@ -50,10 +51,9 @@ class DatabaseSeeder extends Seeder
             'title' => 'Mengenal Pentingnya Kesehatan Mental pada Remaja',
             'slug' => 'Mengenal-Pentingnya-Kesehatan-Mental-pada-Remaja',
             'psikiater_id' => '1',
+            'imgsource' => 'https://source.unsplash.com/1848x1300/?alone',
             'excerpt' =>'Kesehatan mental merupakan kondisi dimana individu memiliki kesejahteraan yang tampak dari 
-            dirinya yang mampu menyadari potensinya sendiri, memiliki kemampuan untuk mengatasi tekanan hidup normal 
-            pada berbagai situasi dalam kehidupan, mampu bekerja secara produktif dan menghasilkan, serta mampu memberikan 
-            kontribusi kepada komunitasnya ',
+            dirinya yang mampu menyadari potensinya sendiri, memiliki kemampuan untuk mengatasi tekanan hidup normal ..',
             'body' => 'Kesehatan mental merupakan kondisi dimana individu memiliki kesejahteraan yang tampak dari 
             dirinya yang mampu menyadari potensinya sendiri, memiliki kemampuan untuk mengatasi tekanan hidup normal 
             pada berbagai situasi dalam kehidupan, mampu bekerja secara produktif dan menghasilkan, serta mampu memberikan 
@@ -72,9 +72,9 @@ class DatabaseSeeder extends Seeder
             'title' => 'Bagaimana Menjaga Kesehatan Mental',
             'slug' => 'Bagaimana-Menjaga-Kesehatan-Mental',
             'psikiater_id' => '2',
+            'imgsource' => 'https://source.unsplash.com/1848x1300/?mental',
             'excerpt' => 'Peribahasa “di dalam tubuh yang sehat, terdapa jiwa yang kuat” sudah tidak asing lagi di telinga 
-            masyarakat Indonesia. Namun, kebanyakan orang mengartikan sehat hanya pada faktor fisik yang terbebas dari 
-            penyakit. Sejatinya, predikat sehat juga meliputi kesehatan mental ',
+            masyarakat Indonesia. Namun, kebanyakan orang mengartikan sehat hanya pada faktor fisik yang terbebas dari ..',
             'body' => 'Peribahasa “di dalam tubuh yang sehat, terdapa jiwa yang kuat” sudah tidak asing lagi di telinga 
             masyarakat Indonesia. Namun, kebanyakan orang mengartikan sehat hanya pada faktor fisik yang terbebas dari 
             penyakit. Sejatinya, predikat sehat juga meliputi kesehatan mental. 
@@ -88,42 +88,12 @@ class DatabaseSeeder extends Seeder
         ]);
 
         artikel::create([
-            'title' => 'Penyebab Seperempat Ibu Depresi Setelah Melahirkan',
-            'slug' => 'Penyebab-Seperempat-ibu-Depresi-Setelah-Melahirkan',
-            'psikiater_id' => '3',
-            'excerpt' => 'Tingginya angka depresi pada perempuan, baik saat hamil maupun setelah melahirkan, membutuhkan 
-            perhatian yang serius dari pemerintah dan keluarga agar dampaknya tak semakin buruk ',
-            'body' => 'Tingginya angka depresi pada perempuan, baik saat hamil maupun setelah melahirkan, membutuhkan 
-            perhatian yang serius dari pemerintah dan keluarga agar dampaknya tak semakin buruk.
-            
-            Sejumlah media menyebut sebelum bunuh diri, ibu tersebut mengalami gejala sindrom baby blues, yaitu perasaan 
-            sedih, cemas, dan mudah marah, yang terjadi dalam jangka pendek (hingga 10 hari setelah melahirkan). Tapi 
-            melihat rangkaian kasus tersebut, ibu ini mungkin memiliki gejala depresi setelah melahirkan, bukan sekadar 
-            baby blues.
-            
-            Postpartum blues atau baby blues syndrome yang mulai disuarakan oleh banyak perempuan di media sosial dialami 
-            oleh mayoritas (70%-80%) ibu melahirkan baik di negara berkembang maupun negara maju.
-            
-            Baby blues disebabkan oleh perubahan hormonal dan sosial (seperti perubahan peran menjadi ibu) setelah 
-            melahirkan. Gejala-gejala baby blues yang dialami oleh ibu akan hilang dengan sendirinya, setelah ibu mampu 
-            menyesuaikan diri dengan peran barunya. Dengan demikian, baby blues tidak dikategorikan sebagai gangguan 
-            kesehatan mental selama masa perinatal.
-            
-            Berbeda dengan baby blues, depresi bisa dialami oleh ibu pada masa kehamilan, setelah melahirkan maupun 
-            pada kedua fase tersebut. Depresi saat hamil juga menjadi salah satu prediktor depresi postpartum
-            
-            Gejala depresi postpartum mirip baby blues dengan durasi, frekuensi, dan intensitas gejala yang lebih 
-            tinggi (parah) dan membutuhkan bantuan tenaga kesehatan untuk menanganinya. Gejala utamanya ditandai 
-            dengan adanya pikiran menyakiti diri sendiri/bayinya, keinginan bunuh diri, dan ketidakmampuan merawat 
-            bayi yang baru dilahirkan.',
-        ]);
-
-        artikel::create([
             'title' => 'Mengatasi Depresi Dengan Terapi Aktivasi Perilaku',
             'slug' => 'Mengatasi-Depresi-Dengan-Terapi-Aktivasi-Perilaku',
             'psikiater_id' => '1',
+            'imgsource' => 'https://source.unsplash.com/1848x1300/?mentalhealth',
             'excerpt' => 'Emosi adalah sumber informasi penting yang menuntun perilaku kita, dan memungkinkan kita 
-            berfungsi sebagai manusia ',
+            berfungsi sebagai manusia. Perasaan bahagia dan tenteram, misalnya, merupakan kepuasan emosional yang ..',
             'body' => 'Emosi adalah sumber informasi penting yang menuntun perilaku kita, dan memungkinkan kita 
             berfungsi sebagai manusia.
             
@@ -158,9 +128,9 @@ class DatabaseSeeder extends Seeder
             'title' => 'Simak Pengertian Self Healing dan 4 Tips Mudah untuk Mengatasinya',
             'slug' => 'Simak-Pengertian-Self-Healing-dan-4-Tips-Mudah-untuk-Mengatasinya',
             'psikiater_id' => '2',
+            'imgsource' => 'https://source.unsplash.com/1848x1300/?crowd',
             'excerpt' => 'Akhir-akhir ini kesehatan mental menjadi topik yang hangat dibicarakan. Banyak tagar-tagar 
-            seperti “mental health awareness, depression, anxiety, self-healing, self-love, dan sebagainya” muncul di 
-            sosial media kita. Tidak jarang juga beberapa artis dan selebgram turut menggaungkan pentingnya ',
+            seperti “mental health awareness, depression, anxiety, self-healing, self-love, dan ..',
             'body' => 'Akhir-akhir ini kesehatan mental menjadi topik yang hangat dibicarakan. Banyak tagar-tagar 
             seperti “mental health awareness, depression, anxiety, self-healing, self-love, dan sebagainya” muncul 
             di sosial media kita. Tidak jarang juga beberapa artis dan selebgram turut menggaungkan pentingnya menjaga 
@@ -189,9 +159,9 @@ class DatabaseSeeder extends Seeder
             'title' => 'Broken Home Butuh Kasih Sayang, Bukan Harapan',
             'slug' => 'Broken-Home-Butuh-Kasih-Sayang-Bukan-Harapan',
             'psikiater_id' => '4',
+            'imgsource' => 'https://source.unsplash.com/1848x1300/?mental',
             'excerpt' => 'Sudah jatuh ketiban tangga pula, mungkin istilah ini sesuai dengan yang dialami oleh orang 
-            yang satu ini. Banyak orang yang memandang anak broken home memiliki prilaku yang kurang baik. Memang hal 
-            tersebut tidak salah',
+            yang satu ini. Banyak orang yang memandang anak broken home memiliki prilaku yang kurang baik. Memang hal ..',
             'body' => 'Sudah jatuh ketiban tangga pula, mungkin istilah ini sesuai dengan yang dialami oleh orang yang 
             satu ini. Banyak orang yang memandang anak broken home memiliki prilaku yang kurang baik. Memang hal tersebut 
             tidak salah juga, namun masih banyak juga anak yang mengalami broken home tapi  masih memeiliki sikap baik. 
@@ -217,39 +187,69 @@ class DatabaseSeeder extends Seeder
             trauma dengan terjalinnya sebuah hubungan seperti yang orang tuanya alami.',
         ]);
 
+        artikel::create([
+            'title' => 'Penyebab Seperempat Ibu Depresi Setelah Melahirkan',
+            'slug' => 'Penyebab-Seperempat-ibu-Depresi-Setelah-Melahirkan',
+            'psikiater_id' => '3',
+            'imgsource' => 'https://source.unsplash.com/1848x1300/?person',
+            'excerpt' => 'Tingginya angka depresi pada perempuan, baik saat hamil maupun setelah melahirkan, membutuhkan 
+            perhatian yang serius dari pemerintah dan keluarga agar dampaknya tak semakin buruk ..',
+            'body' => 'Tingginya angka depresi pada perempuan, baik saat hamil maupun setelah melahirkan, membutuhkan 
+            perhatian yang serius dari pemerintah dan keluarga agar dampaknya tak semakin buruk.
+            
+            Sejumlah media menyebut sebelum bunuh diri, ibu tersebut mengalami gejala sindrom baby blues, yaitu perasaan 
+            sedih, cemas, dan mudah marah, yang terjadi dalam jangka pendek (hingga 10 hari setelah melahirkan). Tapi 
+            melihat rangkaian kasus tersebut, ibu ini mungkin memiliki gejala depresi setelah melahirkan, bukan sekadar 
+            baby blues.
+            
+            Postpartum blues atau baby blues syndrome yang mulai disuarakan oleh banyak perempuan di media sosial dialami 
+            oleh mayoritas (70%-80%) ibu melahirkan baik di negara berkembang maupun negara maju.
+            
+            Baby blues disebabkan oleh perubahan hormonal dan sosial (seperti perubahan peran menjadi ibu) setelah 
+            melahirkan. Gejala-gejala baby blues yang dialami oleh ibu akan hilang dengan sendirinya, setelah ibu mampu 
+            menyesuaikan diri dengan peran barunya. Dengan demikian, baby blues tidak dikategorikan sebagai gangguan 
+            kesehatan mental selama masa perinatal.
+            
+            Berbeda dengan baby blues, depresi bisa dialami oleh ibu pada masa kehamilan, setelah melahirkan maupun 
+            pada kedua fase tersebut. Depresi saat hamil juga menjadi salah satu prediktor depresi postpartum
+            
+            Gejala depresi postpartum mirip baby blues dengan durasi, frekuensi, dan intensitas gejala yang lebih 
+            tinggi (parah) dan membutuhkan bantuan tenaga kesehatan untuk menanganinya. Gejala utamanya ditandai 
+            dengan adanya pikiran menyakiti diri sendiri/bayinya, keinginan bunuh diri, dan ketidakmampuan merawat 
+            bayi yang baru dilahirkan.',
+        ]);
+
         pertanyaan::create([
-            'user_id' => mt_rand(1,15),
+            'user_id' => 7,
             'body' => 'Ciri-ciri apa yang menandakan kesehatan mental seseorang terganggu?',
         ]);
 
-        jawaban_psikiater::create([
+        comment::create([
             'pertanyaan_id' => 1,
-            'psikiater_id' => mt_rand(1,4),
-            'body' => 'Terima kasih atas pertanyaannya. Ada banyak ciri yang menandakan kesehatan mental seseorang terganggu, sebagai
+            'user_id' => 8,
+            'body' => 'Ada banyak ciri yang menandakan kesehatan mental seseorang terganggu, sebagai
             contoh adalah merasa tidak sabar, cepat marah, kualitas tidur buruk, pola makan berubah
             drastis, mengisolasi diri, dan masih banyak ciri lainnya. Jika anda merasa tidak sehat secara
             mental, segera konsultasikan diri anda ke psikiater.'
 
         ]);
 
-        jawaban_psikiater::create([
+        comment::create([
             'pertanyaan_id' => 1,
-            'psikiater_id' => mt_rand(1,4),
-            'body' => 'NYOBA DOANGGG.'
+            'user_id' => 7,
+            'body' => 'Oh begitu yaa, terima kasih atas jawabannyaa.'
 
         ]);
 
         pertanyaan::create([
-            'user_id' => mt_rand(1,15),
+            'user_id' =>11,
             'body' => 'Penyebab gangguan jiwa dan apakah bisa menurun secara genetik?',
         ]);
 
-        jawaban_psikiater::create([
+        comment::create([
             'pertanyaan_id' => 2,
-            'psikiater_id' => mt_rand(1,4),
-            'body' => 'Alo, terima kasih atas pertanyaannya untuk PsyChore.
-
-            Gangguan mental atau gangguan jiwa, dapat terjadi ketika seseorang sulit mengendalikan emosi, 
+            'user_id' => 12,
+            'body' => 'Gangguan mental atau gangguan jiwa, dapat terjadi ketika seseorang sulit mengendalikan emosi, 
             pola pikir, dan perilaku sehingga dapat menyulitkan aktivitas dan pekerjaannya sehari-hari, 
             tanpa pengobatan secara rutin.
             
@@ -264,21 +264,19 @@ class DatabaseSeeder extends Seeder
             mencegah bertambah buruknya gejala gangguan mental di kemudian hari, sehingga tidak 
             terlanjur berakibat terjadinya gejala berat yang sudah mengganggu aktivitas sehari-hari.
             
-            Demikian yang dapat kami sampaikan, semoga bermanfaat. Terima kasih.'
+            Demikian yang dapat saya sampaikan, semoga bermanfaat.'
 
         ]);
 
         pertanyaan::create([
-            'user_id' => mt_rand(1,15),
+            'user_id' => 1,
             'body' => 'Bagaimana cara mengatasi mudah emosi akibat kecanduan game online?',
         ]);
 
-        jawaban_psikiater::create([
+        comment::create([
             'pertanyaan_id' => 3,
-            'psikiater_id' => mt_rand(1,4),
-            'body' => 'Alo, terima kasih atas pertanyaannya untuk PsyChore.
-
-            Kecanduan game online dapat dialami oleh siapa saja baik anak-anak, remaja hingga 
+            'user_id' => 2,
+            'body' => 'Kecanduan game online dapat dialami oleh siapa saja baik anak-anak, remaja hingga 
             dewasa. Bermain game seharusnya menjadi aktivitas menyenangkan yang dilakukan untuk 
             mengilangkan stres bukan malah menyebabkan emosi meningkat hingga melakukan kekerasan 
             verbal.
@@ -291,16 +289,14 @@ class DatabaseSeeder extends Seeder
         ]);
 
         pertanyaan::create([
-            'user_id' => mt_rand(1,15),
+            'user_id' => 2,
             'body' => 'Bagaimanakah tanda seseorang dinyatakan sedang mengalami bipolar?',
         ]);
 
-        jawaban_psikiater::create([
+        comment::create([
             'pertanyaan_id' => 4,
-            'psikiater_id' => mt_rand(1,4),
-            'body' => 'Alo, terima kasih atas pertanyaannya untuk PsyChore.
-
-            Gangguan bipolar adalah salah satu jenis gangguan kejiwaan yang ditandai dengan perubahan 
+            'user_id' => 3,
+            'body' => 'Gangguan bipolar adalah salah satu jenis gangguan kejiwaan yang ditandai dengan perubahan 
             suasana hati secara sangat drastis, dari yang awalnya manik (sangat bahagia) menjadi depresi 
             (sangat sedih) atau sebaliknya. Kondisi ini terjadi akibat terganggunya keseimbangan senyawa 
             kimia di otak yang dipengaruhi juga oleh faktor genetik, lingkungan, gaya hidup, dan status 
@@ -331,13 +327,13 @@ class DatabaseSeeder extends Seeder
         ]);
 
         pertanyaan::create([
-            'user_id' => mt_rand(1,15),
+            'user_id' => 4,
             'body' => 'Bagaimana cara mengatasi stres pada ibu rumah tangga agar tidak berkelanjutan?',
         ]);
 
-        jawaban_psikiater::create([
+        comment::create([
             'pertanyaan_id' => 5,
-            'psikiater_id' => mt_rand(1,4),
+            'user_id' => 5,
             'body' => 'Stress merupakan reaksi ketika tubuh menghadapi ancaman, tekanan, maupun situasi 
             yang baru, termasuk kondisi Anda yang semula ibu bekerja kemudian menjadi ibu rumah tangga. 
             Tubuh membutuhkan adaptasi dan penyesuaian dimana pekerjaan rumah selalu ada dan seperti 

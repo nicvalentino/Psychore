@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class pertanyaan extends Model
 {
@@ -19,6 +19,11 @@ class pertanyaan extends Model
     public function jawaban_psikiaters()
     {
         return $this->hasMany(jawaban_psikiater::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(comment::class);
     }
 
 }

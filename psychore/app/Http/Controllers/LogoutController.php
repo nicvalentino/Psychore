@@ -5,9 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\user;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Validation\Validator;
 
-class RegisterController extends Controller
+class LogoutController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,12 +15,18 @@ class RegisterController extends Controller
      */
     public function index()
     {
+        
+    }
+
+    public function logout(Request $request)
+    {
         if(Auth::check())
         {
-            return redirect()->intended('/home');
-        }else {
-            return view('regist');
+            Auth::logout();
+            $request->session()->invalidate();
+            $request->session()->regenerateToken();
         }
+        return redirect('/home');
     }
 
     /**
@@ -42,19 +47,7 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'name' =>'required',
-            'email' => 'required|email:dns|unique:users',
-            'password' => 'required|min:6|max:255'
-        ]);
-
-        $validatedData['password'] = bcrypt($validatedData['password']);
-
-        user::create($validatedData);
-
-        // $request->session()->flash('success', 'Registrasi berhasil !');
-
-        return redirect()->to('/login');
+        //
     }
 
     /**

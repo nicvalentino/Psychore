@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\artikel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,6 +17,8 @@ class HomeController extends Controller
     {
         return view('home', [
             'isLoggedIn' => Auth::check(),
+            'user' => Auth::user(),
+            'artikels' => artikel::all()->take(4),
         ]);
     }
 

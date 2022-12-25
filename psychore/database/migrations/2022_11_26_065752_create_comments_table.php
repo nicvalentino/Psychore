@@ -14,8 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('comments', function (Blueprint $table) {
-            $table->id('artikel_ID');
-            $table->foreignId('user_ID');
+            $table->id();
+            $table->foreignId('pertanyaan_id');
+            $table->foreignId('user_id');
             $table->text('body');
             $table->timestamps();
         });

@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\jawaban_psikiater;
 use App\Models\pertanyaan;
 use Illuminate\Http\Request;
+use App\Models\jawaban_psikiater;
+use Illuminate\Support\Facades\Auth;
 
 class PsyaskController extends Controller
 {
@@ -16,7 +17,9 @@ class PsyaskController extends Controller
     public function index()
     {
         return view('psyask', [
-            'pertanyaan' => pertanyaan::all(),
+            'isLoggedIn' => Auth::check(),
+            'user' => Auth::user(),
+            'pertanyaan' => pertanyaan::withCount('comments')->get(),
         ]);
     }
 

@@ -2,16 +2,17 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\pertanyaan;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class comment extends Model
 {
     use HasFactory;
 
-    public function artikel()
+    public function pertanyaan()
     {
-        return $this->belongsTo(artikel::class);
+        return $this->belongsTo(pertanyaan::class);
     }
 
     public function user()
