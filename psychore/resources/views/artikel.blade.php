@@ -43,7 +43,7 @@
             <!-- SEARCH BAR -->
             <form action="/artikel">
                 <div class="input-box" style="margin-right:5rem">
-                    <input type="text" placeholder="Cari Pertanyaan" class = "form-control" name="search" value = "{{ request('search') }}">
+                    <input type="text" placeholder="Cari Artikel" class = "form-control" name="search" value = "{{ request('search') }}">
                     <i class="bi bi-search"></i>
                 </div>
             </form>
@@ -104,7 +104,7 @@
 
                                 <div class="col-8">
                                     <!-- TITLE -->
-                                    <a href="#toarticle" style="color: black; text-decoration: none; font-size: 15px; font-weight: 500;">
+                                    <a href="/artikel/{{ $a->slug }}" style="color: black; text-decoration: none; font-size: 15px; font-weight: 500;">
                                         {{ $a->title }}
                                     </a>
                                     <!-- TITLE -->

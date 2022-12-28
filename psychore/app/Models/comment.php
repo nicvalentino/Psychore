@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class comment extends Model
 {
     use HasFactory;
+    
+    protected $guarded = ['id'];
 
     public function pertanyaan()
     {

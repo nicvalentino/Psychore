@@ -41,41 +41,59 @@
             </ul>
 
             <!-- SEARCH BAR -->
-            <div class="input-box">
-                <input type="text" placeholder="Cari Pertanyaan">
-                <i class="bi bi-search"></i>
-            </div>
+            <form action="/psyask">
+                <div class="input-box" style="margin-right:5rem">
+                    <input type="text" placeholder="Cari Pertanyaan" class = "form-control" name="search" value = "{{ request('search') }}">
+                    <i class="bi bi-search"></i>
+                </div>
+            </form>
             <!-- SEARCH BAR -->
         </div>
     </nav>
     <!-- NAVBAR SEARCH -->
 
     <div class="container-fluid" style="background: #F6F7FF; padding: 2.3rem;">
-        <div class="box mx-auto" style="background-color: rgb(112, 116, 232, 0.8); width: 600px; height: 550px;">
+        <div class="box mx-auto" style="background-color: rgb(112, 116, 232, 0.8); width: 600px; height: 250px; margin-bottom:250px;">
             <h2 class="text-center p-4 text-light">
                 Pertanyaan Baru
             </h2>
-            <div class="box mx-auto" style="background-color: #ffffff; width: 570px; height: 390px;">
+            <div class="box mx-auto" style="background-color: #ffffff; width: 570px; height: 120px;">
                 <!-- ASK SUBJECT -->
-                <div class="form-group" style="padding: 1rem; padding-bottom: 0;">
-                    <input type="text" class="form-control" id="#" placeholder="Judul">
-                </div>
+                <form method="POST" action="/addask">
+                    @csrf
+                    <div class="form-group" style="padding: 1.2rem; padding-bottom: 0;">
+                        <input type="text" name="body" class="form-control" id="#" placeholder="Judul">
+                        <input type="hidden" name="user_id" class="form-control" value="{{ Auth::id() }}">
+                    </div>
+                    <!-- PUBLISH BUTTON -->
+                    <div style="margin-left: 29.2rem;">
+                        <button type="submit" class="btn text-light" style="background: #7074E8; width: relative; height: 20px; font-size: 12px; margin-right: .4rem; padding-bottom: 1.3rem; padding-top: .2rem; padding-left: .8rem; padding-right: .8rem; border-radius: 0.5rem;">
+                            <i class="bi bi-send"></i>
+                            Publish
+                        </button>
+                    </div>
+                    <!-- PUBLISH BUTTON -->
+                </form>
                 <!-- ASK SUBJECT -->
 
                 <!-- ASK CONTENT -->
-                <div class="form-group" style="padding: 1rem; padding-top: 0; padding-bottom: 0;">
-                    <textarea class="form-control" rows="10" id="#"></textarea>
-                </div>
+                {{-- <form action="">
+                    <div class="form-group" style="padding: 1rem; padding-top: 0; padding-bottom: 0;">
+                        <textarea class="form-control" rows="10" id="#"></textarea>
+                    </div>
+                </form> --}}
                 <!-- ASK CONTENT -->
 
                 <!-- PUBLISH BUTTON -->
-                <div style="margin-left: 29.2rem;">
+                {{-- <div style="margin-left: 29.2rem;">
                     <div class="btn text-light" style="background: #7074E8; width: relative; height: 20px; font-size: 12px; margin-right: .4rem; padding-bottom: 1.3rem; padding-top: .2rem; padding-left: .8rem; padding-right: .8rem; border-radius: 0.5rem;">
                         <i class="bi bi-send"></i>
                         Publish
                     </div>
-                </div>
+                </div> --}}
                 <!-- PUBLISH BUTTON -->
+
+
             </div>
         </div>
     </div>

@@ -10,7 +10,7 @@ class artikel extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
-    protected $with = ['psikiater'];
+    protected $with = ['user'];
 
     public function scopeFilter($query, array $filters)
     {
@@ -21,9 +21,9 @@ class artikel extends Model
     }
     
 
-    public function psikiater()
+    public function user()
     {
-        return $this->belongsTo(psikiater::class);
+        return $this->belongsTo(user::class);
     }
 
     public function comments()

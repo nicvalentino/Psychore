@@ -33,7 +33,7 @@
             <!-- SEARCH BAR -->
             <form action="/artikel">
                 <div class="input-box">
-                    <input type="text" placeholder="Cari Pertanyaan" class = "form-control" name="search" value = "{{ request('search') }}">
+                    <input type="text" placeholder="Cari Artikel" class = "form-control" name="search" value = "{{ request('search') }}">
                     <i class="bi bi-search"></i>
                 </div>
             </form>
@@ -77,7 +77,7 @@
                                         {{ $a->title }}
                                     </a>
                                     <p class="text-muted" style="font-size: 13px;">Created {{ $a->created_at->diffForHumans() }}</p>
-                                    <p class="text-muted" style="font-size: 13px; padding: 0;">by {{ $a->psikiater->name }}</p>
+                                    <p class="text-muted" style="font-size: 13px; padding: 0;">by {{ $a->user->name }}</p>
                                     <!-- TITLE -->
                                 </div>
                             </div>

@@ -7,6 +7,7 @@ use App\Http\Controllers\AddaskController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PsyaskController;
 use App\Http\Controllers\artikelController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\RegisterController;
 /*
 |--------------------------------------------------------------------------
@@ -35,4 +36,7 @@ Route::get('/artikel/{artikel:slug}', [artikelController::class , 'show']);
 
 Route::get('/psyask', [PsyaskController::class , 'index']);
 
+Route::post('/comment', [CommentController::class , 'store']);
+
 Route::get('/addask', [AddaskController::class , 'index']);
+Route::post('/addask', [AddaskController::class , 'store']);

@@ -30,7 +30,7 @@ class artikelController extends Controller
             'isLoggedIn' => Auth::check(),
             'user' => Auth::user(),
             "title" => $artikel->title,
-            "penulis" => $artikel->psikiater->name,
+            "penulis" => $artikel->user->name,
             "artikel" => $artikel,
             "artikels" => artikel::latest()->Filter(request(['search']))->paginate(5)->withQueryString(),
         ]);

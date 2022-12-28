@@ -21,6 +21,12 @@
         </div>
     @endif
 
+    @if (session()->has('RegistSuccess'))
+        <div class="alert alert-success">
+            {{ session('RegistSuccess') }}
+        </div>
+    @endif
+
 
     <!-- Logo -->
     <div style="text-align: center;">

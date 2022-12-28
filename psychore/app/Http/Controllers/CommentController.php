@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\pertanyaan;
+use App\Models\comment;
 use Illuminate\Http\Request;
-use App\Models\jawaban_psikiater;
 use Illuminate\Support\Facades\Auth;
 
-class PsyaskController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,11 +15,7 @@ class PsyaskController extends Controller
      */
     public function index()
     {
-        return view('psyask', [
-            'isLoggedIn' => Auth::check(),
-            'user' => Auth::user(),
-            'pertanyaan' => pertanyaan::latest()->Filter(request(['search']))->withCount('comments')->get(),
-        ]);
+        //
     }
 
     /**
@@ -40,17 +35,29 @@ class PsyaskController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
+    {     
+        if (Auth::check()){
+            $validatedData = $request->validate([
+                'user_id' =>'required',
+                'pertanyaan_id' => 'required',
+                'body' => 'required'
+            ]);
+    
+            comment::create($validatedData);
+    
+            return back();
+        } else {
+            return view('masuk');
+        }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\pertanyaan  $pertanyaan
+     * @param  \App\Models\comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function show(pertanyaan $pertanyaan)
+    public function show(comment $comment)
     {
         //
     }
@@ -58,10 +65,10 @@ class PsyaskController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\pertanyaan  $pertanyaan
+     * @param  \App\Models\comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function edit(pertanyaan $pertanyaan)
+    public function edit(comment $comment)
     {
         //
     }
@@ -70,10 +77,10 @@ class PsyaskController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\pertanyaan  $pertanyaan
+     * @param  \App\Models\comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, pertanyaan $pertanyaan)
+    public function update(Request $request, comment $comment)
     {
         //
     }
@@ -81,10 +88,10 @@ class PsyaskController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\pertanyaan  $pertanyaan
+     * @param  \App\Models\comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(pertanyaan $pertanyaan)
+    public function destroy(comment $comment)
     {
         //
     }

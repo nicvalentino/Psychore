@@ -40,7 +40,9 @@ class LoginController extends Controller
             $request->session()->regenerate();
             return redirect()->intended('/home');
         }
-        return back()->with('loginError' , 'Login Failed');
+
+        session()->flash('loginError', 'Login Failed');
+        return back();
     }
 
 

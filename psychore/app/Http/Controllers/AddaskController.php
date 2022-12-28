@@ -34,6 +34,7 @@ class AddaskController extends Controller
     public function create()
     {
         //
+        
     }
 
     /**
@@ -45,6 +46,18 @@ class AddaskController extends Controller
     public function store(Request $request)
     {
         //
+        if (Auth::check()){
+            $validatedData = $request->validate([
+                'user_id' =>'required',
+                'body' => 'required'
+            ]);
+
+            pertanyaan::create($validatedData);
+    
+            return redirect()->intended('/psyask');
+        } else {
+            return view('masuk');
+        }
     }
 
     /**

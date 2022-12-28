@@ -48,11 +48,17 @@ class RegisterController extends Controller
             'password' => 'required|min:6|max:255'
         ]);
 
+        if ($validatedData['password'] != $request['confirm_password'])
+        {
+            session()->flash('RegistFailed', 'Password tidak valid !');
+            return back();
+        }
+
         $validatedData['password'] = bcrypt($validatedData['password']);
 
         user::create($validatedData);
 
-        // $request->session()->flash('success', 'Registrasi berhasil !');
+        session()->flash('RegistSuccess', 'Registrasi berhasil !');
 
         return redirect()->to('/login');
     }

@@ -206,7 +206,7 @@
                         <div class="card-body" style="background-color: #ffff;">
                             <h5 class="card-title">{{ $artikel->title }}</h5>
                             <p class="card-text">{{ $artikel->excerpt }} </p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago by <span>(editor)</span></small></p>
+                            <p class="card-text"><small class="text-muted"> Last updated {{ $artikel->created_at->diffForHumans() }} by {{ $artikel->user->name }}</small></p>
                             <a href="artikel/{{ $artikel->slug }}" style="color: #7074e8">Read more ></a>
                         </div>
                     </div>

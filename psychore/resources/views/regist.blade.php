@@ -13,11 +13,20 @@
     <title>Register</title>
 </head>
 <body>
+
+    @if (session()->has('RegistFailed'))
+        <div class="alert alert-danger">
+            {{ session('RegistFailed') }}
+        </div>
+    @endif
+    
     <!-- Logo -->
     <div style="text-align: center;">
         <img src="images/LogoWhite.png" style="width: 60%; margin-bottom: 20px;" alt="">
     </div>
     <!-- Logo -->
+
+    
 
     <div class="container">
         <div class="row px-3">

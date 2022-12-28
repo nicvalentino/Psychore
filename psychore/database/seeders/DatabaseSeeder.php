@@ -21,36 +21,43 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        user::factory(15)->create();
 
-        psikiater::create([
+        user::create([
             'name' => 'Melinda Wulandari S.Psim',
             'email' => 'MelindaWulandari@gmail.com',
-            'password' => bcrypt('cobacoba')
+            'password' => bcrypt('cobacoba'),
+            'is_psikiater' => 1
         ]);
 
-        psikiater::create([
+        user::create([
             'name' => 'Iwan Prasetyo S.Psim',
             'email' => 'IwanPrasetyo@gmail.com',
-            'password' => bcrypt('cobacoba')
+            'password' => bcrypt('cobacoba'),
+            'is_psikiater' => 1
         ]);
 
-        psikiater::create([
+        user::create([
             'name' => 'Dahlia Ninda S.Psim',
             'email' => 'DahliaNinda@gmail.com',
-            'password' => bcrypt('cobacoba')
+            'password' => bcrypt('cobacoba'),
+            'is_psikiater' => 1
         ]);
 
-        psikiater::create([
+        user::create([
             'name' => 'Eka Indah Nurmawati S.Psim', 
             'email' => 'EkaIndahM@gmail.com',
-            'password' => bcrypt('cobacoba')
+            'password' => bcrypt('cobacoba'),
+            'is_psikiater' => 1
         ]);
+
+        user::factory(15)->create();
+
+        
 
         artikel::create([
             'title' => 'Mengenal Pentingnya Kesehatan Mental pada Remaja',
             'slug' => 'Mengenal-Pentingnya-Kesehatan-Mental-pada-Remaja',
-            'psikiater_id' => '1',
+            'user_id' => '1',
             'imgsource' => 'https://source.unsplash.com/1848x1300/?alone',
             'excerpt' =>'Kesehatan mental merupakan kondisi dimana individu memiliki kesejahteraan yang tampak dari 
             dirinya yang mampu menyadari potensinya sendiri, memiliki kemampuan untuk mengatasi tekanan hidup normal ..',
@@ -71,7 +78,7 @@ class DatabaseSeeder extends Seeder
         artikel::create([
             'title' => 'Bagaimana Menjaga Kesehatan Mental',
             'slug' => 'Bagaimana-Menjaga-Kesehatan-Mental',
-            'psikiater_id' => '2',
+            'user_id' => '2',
             'imgsource' => 'https://source.unsplash.com/1848x1300/?mental',
             'excerpt' => 'Peribahasa “di dalam tubuh yang sehat, terdapa jiwa yang kuat” sudah tidak asing lagi di telinga 
             masyarakat Indonesia. Namun, kebanyakan orang mengartikan sehat hanya pada faktor fisik yang terbebas dari ..',
@@ -90,7 +97,7 @@ class DatabaseSeeder extends Seeder
         artikel::create([
             'title' => 'Mengatasi Depresi Dengan Terapi Aktivasi Perilaku',
             'slug' => 'Mengatasi-Depresi-Dengan-Terapi-Aktivasi-Perilaku',
-            'psikiater_id' => '1',
+            'user_id' => '3',
             'imgsource' => 'https://source.unsplash.com/1848x1300/?mentalhealth',
             'excerpt' => 'Emosi adalah sumber informasi penting yang menuntun perilaku kita, dan memungkinkan kita 
             berfungsi sebagai manusia. Perasaan bahagia dan tenteram, misalnya, merupakan kepuasan emosional yang ..',
@@ -127,7 +134,7 @@ class DatabaseSeeder extends Seeder
         artikel::create([
             'title' => 'Simak Pengertian Self Healing dan 4 Tips Mudah untuk Mengatasinya',
             'slug' => 'Simak-Pengertian-Self-Healing-dan-4-Tips-Mudah-untuk-Mengatasinya',
-            'psikiater_id' => '2',
+            'user_id' => '4',
             'imgsource' => 'https://source.unsplash.com/1848x1300/?crowd',
             'excerpt' => 'Akhir-akhir ini kesehatan mental menjadi topik yang hangat dibicarakan. Banyak tagar-tagar 
             seperti “mental health awareness, depression, anxiety, self-healing, self-love, dan ..',
@@ -158,7 +165,7 @@ class DatabaseSeeder extends Seeder
         artikel::create([
             'title' => 'Broken Home Butuh Kasih Sayang, Bukan Harapan',
             'slug' => 'Broken-Home-Butuh-Kasih-Sayang-Bukan-Harapan',
-            'psikiater_id' => '4',
+            'user_id' => '1',
             'imgsource' => 'https://source.unsplash.com/1848x1300/?mental',
             'excerpt' => 'Sudah jatuh ketiban tangga pula, mungkin istilah ini sesuai dengan yang dialami oleh orang 
             yang satu ini. Banyak orang yang memandang anak broken home memiliki prilaku yang kurang baik. Memang hal ..',
@@ -190,7 +197,7 @@ class DatabaseSeeder extends Seeder
         artikel::create([
             'title' => 'Penyebab Seperempat Ibu Depresi Setelah Melahirkan',
             'slug' => 'Penyebab-Seperempat-ibu-Depresi-Setelah-Melahirkan',
-            'psikiater_id' => '3',
+            'user_id' => '2',
             'imgsource' => 'https://source.unsplash.com/1848x1300/?person',
             'excerpt' => 'Tingginya angka depresi pada perempuan, baik saat hamil maupun setelah melahirkan, membutuhkan 
             perhatian yang serius dari pemerintah dan keluarga agar dampaknya tak semakin buruk ..',
@@ -226,7 +233,7 @@ class DatabaseSeeder extends Seeder
 
         comment::create([
             'pertanyaan_id' => 1,
-            'user_id' => 8,
+            'user_id' => 1,
             'body' => 'Ada banyak ciri yang menandakan kesehatan mental seseorang terganggu, sebagai
             contoh adalah merasa tidak sabar, cepat marah, kualitas tidur buruk, pola makan berubah
             drastis, mengisolasi diri, dan masih banyak ciri lainnya. Jika anda merasa tidak sehat secara
@@ -248,7 +255,7 @@ class DatabaseSeeder extends Seeder
 
         comment::create([
             'pertanyaan_id' => 2,
-            'user_id' => 12,
+            'user_id' => 2,
             'body' => 'Gangguan mental atau gangguan jiwa, dapat terjadi ketika seseorang sulit mengendalikan emosi, 
             pola pikir, dan perilaku sehingga dapat menyulitkan aktivitas dan pekerjaannya sehari-hari, 
             tanpa pengobatan secara rutin.
@@ -269,7 +276,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         pertanyaan::create([
-            'user_id' => 1,
+            'user_id' => 8,
             'body' => 'Bagaimana cara mengatasi mudah emosi akibat kecanduan game online?',
         ]);
 
@@ -289,7 +296,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         pertanyaan::create([
-            'user_id' => 2,
+            'user_id' => 17,
             'body' => 'Bagaimanakah tanda seseorang dinyatakan sedang mengalami bipolar?',
         ]);
 
@@ -327,7 +334,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         pertanyaan::create([
-            'user_id' => 4,
+            'user_id' => 15,
             'body' => 'Bagaimana cara mengatasi stres pada ibu rumah tangga agar tidak berkelanjutan?',
         ]);
 
