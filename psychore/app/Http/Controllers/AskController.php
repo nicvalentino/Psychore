@@ -6,7 +6,7 @@ use App\Models\pertanyaan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class AddaskController extends Controller
+class AskController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -56,7 +56,7 @@ class AddaskController extends Controller
     
             return redirect()->intended('/psyask');
         } else {
-            return view('masuk');
+            return redirect('/login');
         }
     }
 

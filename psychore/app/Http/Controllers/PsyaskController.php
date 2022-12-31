@@ -86,6 +86,7 @@ class PsyaskController extends Controller
      */
     public function destroy(pertanyaan $pertanyaan)
     {
-        //
+        pertanyaan::destroy($pertanyaan->id);
+        return back();
     }
 }

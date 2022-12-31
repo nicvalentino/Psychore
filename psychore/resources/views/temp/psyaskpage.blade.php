@@ -91,7 +91,8 @@
                     <div class="card-footer py-3 border-0" style="background-color: #FFFFFF;">
                         <span style="font-weight: 500;">Comments</span>
                         <!-- FORM  -->
-                        <form>
+                        <form method="POST" action="/comment">
+                            @csrf
                             <div class="d-flex flex-start w-100">
                                 <div class="form-outline w-100">
                                     <textarea class="form-control" id="textAreaExample" name="body" rows="3" style="background: #fff; font-size: 12px;">

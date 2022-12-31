@@ -47,7 +47,7 @@ class CommentController extends Controller
     
             return back();
         } else {
-            return view('masuk');
+            return redirect('/login');
         }
     }
 
@@ -82,7 +82,12 @@ class CommentController extends Controller
      */
     public function update(Request $request, comment $comment)
     {
-        //
+        $validatedData = $request->validate([
+            'body' => 'required',
+        ]);
+
+        comment::where('id', $comment->id)->update($validatedData);
+        return redirect('/psyask');
     }
 
     /**
@@ -93,6 +98,7 @@ class CommentController extends Controller
      */
     public function destroy(comment $comment)
     {
-        //
+        comment::destroy($comment->id);
+        return back();
     }
 }

@@ -59,7 +59,7 @@
             </h2>
             <div class="box mx-auto" style="background-color: #ffffff; width: 570px; height: 120px;">
                 <!-- ASK SUBJECT -->
-                <form method="POST" action="/addask">
+                <form method="POST" action="/ask">
                     @csrf
                     <div class="form-group" style="padding: 1.2rem; padding-bottom: 0;">
                         <input type="text" name="body" class="form-control" id="#" placeholder="Judul">

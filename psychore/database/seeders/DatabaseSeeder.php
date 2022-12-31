@@ -53,12 +53,12 @@ class DatabaseSeeder extends Seeder
         user::factory(15)->create();
 
         
-
+        //https://source.unsplash.com/1848x1300/?mental
         artikel::create([
             'title' => 'Mengenal Pentingnya Kesehatan Mental pada Remaja',
             'slug' => 'Mengenal-Pentingnya-Kesehatan-Mental-pada-Remaja',
             'user_id' => '1',
-            'imgsource' => 'https://source.unsplash.com/1848x1300/?alone',
+            'imgsource' => 'https://images.unsplash.com/photo-1463114680351-75863cab5bf3?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=1300&ixid=MnwxfDB8MXxyYW5kb218MHx8YWxvbmV8fHx8fHwxNjcyNDk5NDE5&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1848',
             'excerpt' =>'Kesehatan mental merupakan kondisi dimana individu memiliki kesejahteraan yang tampak dari 
             dirinya yang mampu menyadari potensinya sendiri, memiliki kemampuan untuk mengatasi tekanan hidup normal ..',
             'body' => 'Kesehatan mental merupakan kondisi dimana individu memiliki kesejahteraan yang tampak dari 
@@ -79,7 +79,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Bagaimana Menjaga Kesehatan Mental',
             'slug' => 'Bagaimana-Menjaga-Kesehatan-Mental',
             'user_id' => '2',
-            'imgsource' => 'https://source.unsplash.com/1848x1300/?mental',
+            'imgsource' => 'https://images.unsplash.com/photo-1571721795195-a2ca2d3370a9?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=1300&ixid=MnwxfDB8MXxyYW5kb218MHx8bWVudGFsfHx8fHx8MTY3MjQ5OTQ0MQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1848',
             'excerpt' => 'Peribahasa “di dalam tubuh yang sehat, terdapa jiwa yang kuat” sudah tidak asing lagi di telinga 
             masyarakat Indonesia. Namun, kebanyakan orang mengartikan sehat hanya pada faktor fisik yang terbebas dari ..',
             'body' => 'Peribahasa “di dalam tubuh yang sehat, terdapa jiwa yang kuat” sudah tidak asing lagi di telinga 
@@ -98,7 +98,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Mengatasi Depresi Dengan Terapi Aktivasi Perilaku',
             'slug' => 'Mengatasi-Depresi-Dengan-Terapi-Aktivasi-Perilaku',
             'user_id' => '3',
-            'imgsource' => 'https://source.unsplash.com/1848x1300/?mentalhealth',
+            'imgsource' => 'https://images.unsplash.com/photo-1581333100576-b73befd79a9b?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=1300&ixid=MnwxfDB8MXxyYW5kb218MHx8bWVudGFsaGVhbHRofHx8fHx8MTY3MjQ5OTQ2NQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1848',
             'excerpt' => 'Emosi adalah sumber informasi penting yang menuntun perilaku kita, dan memungkinkan kita 
             berfungsi sebagai manusia. Perasaan bahagia dan tenteram, misalnya, merupakan kepuasan emosional yang ..',
             'body' => 'Emosi adalah sumber informasi penting yang menuntun perilaku kita, dan memungkinkan kita 
@@ -135,7 +135,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Simak Pengertian Self Healing dan 4 Tips Mudah untuk Mengatasinya',
             'slug' => 'Simak-Pengertian-Self-Healing-dan-4-Tips-Mudah-untuk-Mengatasinya',
             'user_id' => '4',
-            'imgsource' => 'https://source.unsplash.com/1848x1300/?crowd',
+            'imgsource' => 'https://images.unsplash.com/photo-1562686686-10bff25dd2dd?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=1300&ixid=MnwxfDB8MXxyYW5kb218MHx8Y3Jvd2R8fHx8fHwxNjcyNDk5NDgw&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1848',
             'excerpt' => 'Akhir-akhir ini kesehatan mental menjadi topik yang hangat dibicarakan. Banyak tagar-tagar 
             seperti “mental health awareness, depression, anxiety, self-healing, self-love, dan ..',
             'body' => 'Akhir-akhir ini kesehatan mental menjadi topik yang hangat dibicarakan. Banyak tagar-tagar 
@@ -166,7 +166,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Broken Home Butuh Kasih Sayang, Bukan Harapan',
             'slug' => 'Broken-Home-Butuh-Kasih-Sayang-Bukan-Harapan',
             'user_id' => '1',
-            'imgsource' => 'https://source.unsplash.com/1848x1300/?mental',
+            'imgsource' => 'https://images.unsplash.com/photo-1493809842364-78817add7ffb?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=1300&ixid=MnwxfDB8MXxyYW5kb218MHx8aG9tZXx8fHx8fDE2NzI0OTk1NDk&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1848',
             'excerpt' => 'Sudah jatuh ketiban tangga pula, mungkin istilah ini sesuai dengan yang dialami oleh orang 
             yang satu ini. Banyak orang yang memandang anak broken home memiliki prilaku yang kurang baik. Memang hal ..',
             'body' => 'Sudah jatuh ketiban tangga pula, mungkin istilah ini sesuai dengan yang dialami oleh orang yang 
@@ -198,7 +198,7 @@ class DatabaseSeeder extends Seeder
             'title' => 'Penyebab Seperempat Ibu Depresi Setelah Melahirkan',
             'slug' => 'Penyebab-Seperempat-ibu-Depresi-Setelah-Melahirkan',
             'user_id' => '2',
-            'imgsource' => 'https://source.unsplash.com/1848x1300/?person',
+            'imgsource' => 'https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=1300&ixid=MnwxfDB8MXxyYW5kb218MHx8cGVyc29ufHx8fHx8MTY3MjQ5OTM5Mw&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1848',
             'excerpt' => 'Tingginya angka depresi pada perempuan, baik saat hamil maupun setelah melahirkan, membutuhkan 
             perhatian yang serius dari pemerintah dan keluarga agar dampaknya tak semakin buruk ..',
             'body' => 'Tingginya angka depresi pada perempuan, baik saat hamil maupun setelah melahirkan, membutuhkan 

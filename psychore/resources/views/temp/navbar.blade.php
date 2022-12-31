@@ -38,12 +38,6 @@
                     <li class="nav-item">
                         <a href="/artikel" class="nav-link text-light pr-5"> Artikel </a>
                     </li>
-
-                    <!-- ADD ARTIKEL BUAT PSIKIATER -->
-                    <li class="nav-item">
-                        <a href="/artikel/create" class="nav-link text-light pr-5"> Tambah Artikel </a>
-                    </li>
-                    <!-- ADD ARTIKEL BUAT PSIKIATER -->
                 </ul>
             </div>
 

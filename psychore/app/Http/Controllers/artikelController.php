@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\user;
 use App\Models\artikel;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class artikelController extends Controller
+class ArtikelController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -43,7 +44,22 @@ class artikelController extends Controller
      */
     public function create()
     {
-        //
+        // $user = Auth::user();
+        // if($user->is_psikiater){
+        //     return view( 'addartikel', [
+        //         'isLoggedIn' => Auth::check(),
+        //         'user' => Auth::user(),
+        //     ]);
+        // }
+
+        if (Auth::check()){
+            return view( 'addartikel', [
+                'isLoggedIn' => Auth::check(),
+                'user' => Auth::user(),
+            ]);
+        } else {
+            return redirect('/login');
+        }
     }
 
     /**
@@ -54,7 +70,21 @@ class artikelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'title' =>'required',
+            'user_id' => 'required',
+            'imgsource' => 'required',
+            'body' => 'required'
+        ]);
+
+        
+
+        $validatedData['slug'] = Str::slug($validatedData['title']);
+        $validatedData['excerpt'] = Str::limit(strip_tags($validatedData['body']), 200);
+
+        artikel::create($validatedData);
+
+        return redirect()->to('/artikel');
     }
 
     /**
@@ -96,6 +126,7 @@ class artikelController extends Controller
      */
     public function destroy(artikel $artikel)
     {
-        //
+        artikel::destroy($artikel->id);
+        return back();
     }
 }

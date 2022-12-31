@@ -3,10 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\AddaskController;
+use App\Http\Controllers\AskController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PsyaskController;
-use App\Http\Controllers\artikelController;
+use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\RegisterController;
 /*
@@ -31,12 +31,18 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 
 Route::get('/logout', [LogoutController::class, 'logout']);
 
-Route::get('/artikel', [artikelController::class , 'index']);
-Route::get('/artikel/{artikel:slug}', [artikelController::class , 'show']);
+Route::get('/artikel', [ArtikelController::class , 'index']);
+Route::get('/artikel/create', [ArtikelController::class , 'create']);
+Route::post('/artikel/create', [ArtikelController::class , 'store']);
+Route::get('/artikel/{artikel:slug}', [ArtikelController::class , 'show']);
 
 Route::get('/psyask', [PsyaskController::class , 'index']);
+Route::delete('/psyask/{pertanyaan:id}/delete', [PsyaskController::class, 'destroy']);
 
-Route::post('/comment', [CommentController::class , 'store']);
+Route::post('/psyask/comments', [CommentController::class , 'store']);
+Route::delete('/psyask/comments/{comment:id}/delete', [CommentController::class , 'destroy']);
+Route::put('/psyask/comments/{comment:id}/edit', [CommentController::class , 'update']);
 
-Route::get('/addask', [AddaskController::class , 'index']);
-Route::post('/addask', [AddaskController::class , 'store']);
+Route::get('/ask', [AskController::class , 'index']);
+Route::post('/ask', [AskController::class , 'store']);
+

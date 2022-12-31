@@ -59,19 +59,19 @@
 
             <!-- RIGHT SIDE -->
             <div class="col-6 col-md-4" style="margin-top: 2.9rem; margin-left: 1rem;">
-                <ul class="list-unstyled list-group-l list-group-flush">
+                <ul class="list-group-l list-group-flush">
                     <!-- CONTENTS -->
 
                     @foreach($artikel as $a)
                         <li class="list-group-item-l">
                             <div class="row">
                                 <!-- Image -->
-                                <div class="col-4" style="padding: 0;">
+                                <div class="col-4" style="padding: 0; ">
                                     <img src="{{ $a->imgsource }}">
                                 </div>
                                 <!-- Image -->
 
-                                <div class="col-8" style="padding-right: 1rem">
+                                <div class="col-8">
                                     <!-- TITLE -->
                                     <a href="/artikel/{{ $a->slug }}" style="color: black; text-decoration: none; font-size: 15px; font-weight: 500;">
                                         {{ $a->title }}
