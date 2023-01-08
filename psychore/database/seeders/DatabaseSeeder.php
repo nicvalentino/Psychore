@@ -58,7 +58,9 @@ class DatabaseSeeder extends Seeder
             'title' => 'Mengenal Pentingnya Kesehatan Mental pada Remaja',
             'slug' => 'Mengenal-Pentingnya-Kesehatan-Mental-pada-Remaja',
             'user_id' => '1',
-            'imgsource' => 'https://images.unsplash.com/photo-1463114680351-75863cab5bf3?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=1300&ixid=MnwxfDB8MXxyYW5kb218MHx8YWxvbmV8fHx8fHwxNjcyNDk5NDE5&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1848',
+            'imgsource' => 'https://images.unsplash.com/photo-1463114680351-75863cab5bf3?crop=entropy&c
+            s=tinysrgb&fit=crop&fm=jpg&h=1300&ixid=MnwxfDB8MXxyYW5kb218MHx8YWxvbmV8fHx8fHwxNjcyNDk5NDE5
+            &ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1848',
             'excerpt' =>'Kesehatan mental merupakan kondisi dimana individu memiliki kesejahteraan yang tampak dari 
             dirinya yang mampu menyadari potensinya sendiri, memiliki kemampuan untuk mengatasi tekanan hidup normal ..',
             'body' => 'Kesehatan mental merupakan kondisi dimana individu memiliki kesejahteraan yang tampak dari 
