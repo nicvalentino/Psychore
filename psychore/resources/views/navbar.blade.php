@@ -40,9 +40,13 @@
                     </li>
 
                     <!-- ADD ARTIKEL BUAT PSIKIATER -->
-                    <li class="nav-item">
-                        <a href="/artikel/create" class="nav-link text-light pr-5"> Tambah Artikel </a>
-                    </li>
+                    @if($isLoggedIn)
+                        @if($user->is_psikiater)
+                            <li class="nav-item">
+                                <a href="/artikel/create" class="nav-link text-light pr-5"> Tambah Artikel </a>
+                            </li>
+                        @endif
+                    @endif
                     <!-- ADD ARTIKEL BUAT PSIKIATER -->
                 </ul>
             </div>
