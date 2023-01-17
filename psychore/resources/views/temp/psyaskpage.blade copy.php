@@ -76,16 +76,6 @@
                             </button>
                         </form>
                     @endif
-
-                    @if($user->is_admin and $user->id != $tanya->user->id)
-                        <form action="/psyask/{{ $tanya->id }}/delete" method="POST">
-                            @method('delete')
-                            @csrf
-                            <button onclick="return confirm('Are you sure ?')" class="btn text-muted" style="background-color: transparent; border-color: transparent; width: relative; height: 20px; font-size: 12px; margin-right: 1rem; padding-bottom: 0rem; padding-top: 0rem; padding-left: 0rem; padding-right: 0rem; border-radius: 0.4rem;">
-                                Delete
-                            </button>
-                        </form>
-                    @endif
                     <!-- DELETE -->
                     
                 </div>
@@ -135,6 +125,14 @@
                             </div>
                         </form>
                         <!-- FORM  -->
+
+                        <!-- BUTTON POST COMMENT -->
+                        {{-- <div class="float-end mt-2 pt-1">
+                            <button type="button" class="btn btn-primary btn-sm" style="background-color: #7074E8; border-color: transparent; color: #fff; width: relative; height: 20px; font-size: 12px; margin-right: .4rem; padding-bottom: 1.2rem; padding-top: .2rem; padding-left: .5rem; padding-right: .5rem; border-radius: 0.4rem;">
+                                Post comment
+                            </button>
+                        </div> --}}
+                        <!-- BUTTON POST COMMENT -->
                     </div>
                     <!-- COMMENT INPUT -->
 
@@ -142,6 +140,7 @@
                     @foreach($tanya->comments as $comment)
                         <div class="card-body" style="padding-top: 0; padding-bottom: 0;">
                             <hr>
+                            @if($comment->user->is_psikiater)
                                 <div class="row">
                                     <div class="col">
                                         @if($comment->user->is_psikiater)
@@ -152,36 +151,23 @@
                                     </div>
 
                                     @if(Auth::id() == $comment->user->id)
-                                        <!-- EDIT -->
-                                        <button type="edit" id="editComPsi" class="btn text-muted" style="background-color: transparent; border-color: transparent; width: relative; height: 20px; font-size: 12px; margin-right: 2rem; padding-bottom: 0rem; padding-top: 0rem; padding-left: 0rem; padding-right: 0rem; border-radius: 0.4rem;"
-                                            data-toggle="collapse" data-target=".editCom{{ $comment->id }}" aria-expanded="false" aria-controls="commentEdit{{ $comment->id }}" onclick="myFunction()">
-                                            Edit
+                                    <!-- EDIT -->
+                                    <button type="edit" id="editComPsi" class="btn text-muted" style="background-color: transparent; border-color: transparent; width: relative; height: 20px; font-size: 12px; margin-right: 2rem; padding-bottom: 0rem; padding-top: 0rem; padding-left: 0rem; padding-right: 0rem; border-radius: 0.4rem;"
+                                        data-toggle="collapse" data-target=".editCom{{ $comment->id }}" aria-expanded="false" aria-controls="commentEdit{{ $comment->id }}" onclick="myFunction()">
+                                        Edit
+                                    </button>
+                                    <!-- EDIT -->
+
+                                    <!-- DELETE -->
+                                    
+                                    <form action="/psyask/comments/{{ $comment->id }}/delete" method="POST">
+                                        @method('delete')
+                                        @csrf
+                                        <button onclick="return confirm('Are you sure ?')" class="btn text-muted" style="background-color: transparent; border-color: transparent; width: relative; height: 20px; font-size: 12px; margin-right: 1rem; padding-bottom: 0rem; padding-top: 0rem; padding-left: 0rem; padding-right: 0rem; border-radius: 0.4rem;">
+                                            Delete
                                         </button>
-                                        <!-- EDIT -->
-
-                                        <!-- DELETE -->
-                                        
-                                        <form action="/psyask/comments/{{ $comment->id }}/delete" method="POST">
-                                            @method('delete')
-                                            @csrf
-                                            <button onclick="return confirm('Are you sure ?')" class="btn text-muted" style="background-color: transparent; border-color: transparent; width: relative; height: 20px; font-size: 12px; margin-right: 1rem; padding-bottom: 0rem; padding-top: 0rem; padding-left: 0rem; padding-right: 0rem; border-radius: 0.4rem;">
-                                                Delete
-                                            </button>
-                                        </form>
-                                        <!-- DELETE -->
-                                    @endif
-
-                                    @if($user->is_admin and $user->id != $comment->user->id)
-                                        <!-- DELETE -->
-                                        
-                                        <form action="/psyask/comments/{{ $comment->id }}/delete" method="POST">
-                                            @method('delete')
-                                            @csrf
-                                            <button onclick="return confirm('Are you sure ?')" class="btn text-muted" style="background-color: transparent; border-color: transparent; width: relative; height: 20px; font-size: 12px; margin-right: 1rem; padding-bottom: 0rem; padding-top: 0rem; padding-left: 0rem; padding-right: 0rem; border-radius: 0.4rem;">
-                                                Delete
-                                            </button>
-                                        </form>
-                                        <!-- DELETE -->
+                                    </form>
+                                    <!-- DELETE -->
                                     @endif
 
 
@@ -212,8 +198,66 @@
                                         </div>
                                         <!-- Save Button -->
                                     </form>
+
                                 </div>
                                 <!-- EDIT FORM -->
+                                
+                            @else
+                                <div class="row">
+                                    <div class="col">
+                                        <p style="margin-bottom: 0; font-weight: 600;">{{ $comment->user->name }}</p>
+                                    </div>
+
+                                    @if(Auth::id() == $comment->user->id)
+                                    <!-- EDIT -->
+                                    <button type="edit" id="editComUser" class="btn text-muted" style="background-color: transparent; border-color: transparent; width: relative; height: 20px; font-size: 12px; margin-right: 2rem; padding-bottom: 0rem; padding-top: 0rem; padding-left: 0rem; padding-right: 0rem; border-radius: 0.4rem;"
+                                        data-toggle="collapse" data-target=".editCom{{ $comment->id }}" aria-expanded="false" aria-controls="commentEdit{{ $comment->id }}" onclick="myFunction()">
+                                        Edit
+                                    </button>
+                                    <!-- EDIT -->
+
+                                    <!-- DELETE -->
+                                        <form action="/psyask/comments/{{ $comment->id }}/delete" method="POST">
+                                            @method('delete')
+                                            @csrf
+                                            <button onclick="return confirm('Are you sure ?')" style="background-color: transparent; border-color: transparent; width: relative; height: 20px; font-size: 12px; margin-right: 1rem; padding-bottom: 0rem; padding-top: 0rem; padding-left: 0rem; padding-right: 0rem; border-radius: 0.4rem;">
+                                                Delete
+                                            </button>
+                                        </form>
+                                    <!-- DELETE -->
+                                    @endif
+                                </div>
+
+                                <p class="text-muted" style="font-size: smaller;">{{ $comment->created_at->diffForHumans() }}</p>
+
+                                <div id="commentBody">
+                                    <p>{{ $comment->body }}</p>
+                                </div>
+
+                                <!-- EDIT FORM -->
+                                <div class="collapse editCom{{ $comment->id }}" id="commentEdit{{ $comment->id }}">
+
+                                    <form action="/psyask/comments/{{ $comment->id }}/edit" method="post">
+                                        @method('put')
+                                        @csrf
+                                        <div class="d-flex w-100">
+                                            <div class="form-outline w-100">
+                                                <textarea class="form-control" id="textAreaExample" name="body" rows="8" style="background: #fff; font-size: 12px;">{{ $comment->body }}</textarea>
+                                            </div>
+                                        </div>
+
+                                        <!-- Save Button -->
+                                        <div class="float-end mt-2 pt-1">
+                                            <button type="submit" class="btn btn-primary btn-sm" style="background-color: #7074E8; border-color: transparent; color: #fff; width: relative; height: 20px; font-size: 12px; margin-right: .4rem; padding-bottom: 1.2rem; padding-top: .2rem; padding-left: .5rem; padding-right: .5rem; border-radius: 0.4rem;">
+                                                Save comment
+                                            </button>
+                                        </div>
+                                        <!-- Save Button -->
+                                    </form>
+                                </div>
+                                <!-- EDIT FORM -->
+
+                            @endif
                         </div>
                     @endforeach
                     <!-- PPL COMMENTS -->

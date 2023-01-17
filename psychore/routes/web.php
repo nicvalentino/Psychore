@@ -43,6 +43,6 @@ Route::post('/psyask/comments', [CommentController::class , 'store']);
 Route::delete('/psyask/comments/{comment:id}/delete', [CommentController::class , 'destroy']);
 Route::put('/psyask/comments/{comment:id}/edit', [CommentController::class , 'update']);
 
-Route::get('/ask', [AskController::class , 'index']);
-Route::post('/ask', [AskController::class , 'store']);
+Route::get('/ask', [PsyaskController::class , 'create']);
+Route::post('/ask', [PsyaskController::class , 'store']);
 
