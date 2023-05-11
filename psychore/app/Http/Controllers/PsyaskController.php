@@ -16,11 +16,17 @@ class PsyaskController extends Controller
      */
     public function index()
     {
-        return view('psyask', [
-            'isLoggedIn' => Auth::check(),
-            'user' => Auth::user(),
-            'pertanyaan' => pertanyaan::latest()->Filter(request(['search']))->withCount('comments')->get(),
-        ]);
+        $isLoggedIn = Auth::check();
+        if ($isLoggedIn) {
+            return view('psyask', [
+                'isLoggedIn' => Auth::check(),
+                'user' => Auth::user(),
+                'pertanyaan' => pertanyaan::latest()->Filter(request(['search']))->withCount('comments')->get(),
+            ]);
+        } else {
+            return redirect('/login');
+        }
+        
     }
 
     /**
