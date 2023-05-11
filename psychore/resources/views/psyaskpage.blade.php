@@ -67,7 +67,7 @@
 
                     <!-- DELETE -->
 
-                    @if(Auth::id() ==   )
+                    @if(Auth::id() ==  $tanya->user_id )
                         <form action="/psyask/{{ $tanya->id }}/delete" method="POST">
                             @method('delete')
                             @csrf
