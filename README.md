@@ -7,5 +7,5 @@ Psychore is a web-based application, which can make it easier for users to ask q
 Contributor : 
 1. Nico Valentino - https://www.linkedin.com/in/nicvalentino
 2. Imas
-3. Kurnia
+3. Kurnia Nur Akmaliyah Dalimunthe - https://www.linkedin.com/in/kurnia-nur-akmaliyah-dalimunthe/
 4. Regina
